@@ -1,14 +1,15 @@
-"""
-WSGI config for project project.
+#/var/www/workspace/django-tutorial-#bugreport
+## -*- coding: utf-8 -*-
 
-It exposes the WSGI callable as a module-level variable named ``application``.
+import os, sys
 
-For more information on this file, see
-https://docs.djangoproject.com/en/1.6/howto/deployment/wsgi/
-"""
+sys.path.insert(0, '/var/www/workspace/django-tutorial-bugreport/')
 
-import os
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "project.settings")
+sys.path.insert(0, '/var/www/workspace/django-tutorial-bugreport/project')
 
-from django.core.wsgi import get_wsgi_application
-application = get_wsgi_application()
+sys.path.insert(0, '/usr/local/bin/')
+
+os.environ['DJANGO_SETTINGS_MODULE'] = 'settings'
+
+from django.core.handlers.wsgi import WSGIHandler      
+application = WSGIHandler()
