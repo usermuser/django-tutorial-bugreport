@@ -12,7 +12,8 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 import os,sys
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
-sys.path.append('/var/www/workspace/django-tutorial-bugreport')
+#sys.path.append('/var/www/workspace/django-tutorial-bugreport')
+
 
 
 # Quick-start development settings - unsuitable for production
