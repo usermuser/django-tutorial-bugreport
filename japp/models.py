@@ -16,10 +16,10 @@ class Pda(models.Model):
     text=models.TextField(max_length=300)
     date=models.DateTimeField(auto_now=True)
     #file=models.FileField(upload_to=)
-    user = models.ForeignKey(User)
+    user = models.ForeignKey(User,)
     
     def __unicode__(self):
-        return self.date
+        return unicode(self.date)
     
     
     
