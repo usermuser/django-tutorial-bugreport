@@ -16,8 +16,8 @@
         <tr>
             <td>{{ pda.cpu }}</td>
             <td>{{ pda.date|date }}</td>
-            <td>{{ pda.user }}</td>
-            <td><a href="{% url 'detail' pda.pk %}">{{ pda.cpu.zone }}</a></td>
+            <td>  {{ pda.user }} </td>
+            <td><a href="{% url 'japp_detail' pda.pk %}">{{ pda.cpu.zone }}</a></td>
         </tr>
         {% empty %}
         <tr>
