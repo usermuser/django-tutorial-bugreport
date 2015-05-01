@@ -10,7 +10,7 @@ class Cpu(models.Model):
     
     def __unicode__(self):
         return self.name
-    
+
 class Pda(models.Model):
     cpu=models.ForeignKey(Cpu)
     text=models.TextField(max_length=300)
@@ -20,10 +20,6 @@ class Pda(models.Model):
     
     def __unicode__(self):
         return unicode(self.date)
-    
-    
-    
-    
     
     
     

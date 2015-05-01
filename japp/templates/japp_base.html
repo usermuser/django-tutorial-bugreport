@@ -8,7 +8,7 @@
         {% if user.is_authenticated %}
             <div>Welcome, {{ user.username }}
              | <a href="{% url 'logout' %}">Logout</a></div>
-            <div><a href="{% url 'japp_add' %}">Add ticket</a></div>
+            <div><a href="{% url 'japp_add' %}">Add Changes</a></div>
 
         {% else %}
             <div><a href="{% url 'japp_register' %}">Register

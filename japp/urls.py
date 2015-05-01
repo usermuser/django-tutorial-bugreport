@@ -12,4 +12,5 @@ urlpatterns = patterns('',
           {"next_page" : reverse_lazy('japp_login')}, name="logout"),
     url(r'^register/$', PdaChangesRegisterView.as_view(), name='japp_register'),
     url(r'^add/$', PdaChangesCreateView.as_view(), name='japp_add'),
+   # url(r'^last_changes/$', views.last_10_pda_changes, name='last_changes'),
 )
