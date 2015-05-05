@@ -1,5 +1,3 @@
-#from django.shortcuts import render
-
 # Create your views here.
 from django.shortcuts import render
 from django.views.generic import CreateView 
@@ -10,30 +8,27 @@ from django.views.generic import ListView, DetailView
 from .models import Pda
 
 class PdaChangesListView(ListView):
-   # model = Pda
-    template_name = ('japp_list.html')
+    template_name = ('japp/list.html')
     context_object_name = 'latest_pda_changes'
 
     def get_queryset(self):
-      #  latest_pda_changes_list = Pda.objects.order_by('date')[:10]
-       # context = {latest_pda_changes_list : latest_pda_changes_list}
-        return Pda.objects.order_by('-date')[:2]
-
+        return Pda.objects.order_by('-date')
+    
 class PdaChangesDetailView(DetailView):
     model = Pda
-    template_name = ('japp_detail.html')
+    template_name = ('japp/detail.html')
 
 
 class PdaChangesRegisterView(CreateView):
     form_class = UserCreationForm
-    template_name = 'japp_register.html'
-    success_url = reverse_lazy('japp_index')
+    template_name = 'japp/register.html'
+    success_url = reverse_lazy('japp:index')
 
 class PdaChangesCreateView(CreateView):
     model = Pda
-    template_name = 'japp_add.html'
+    template_name = 'japp/add.html'
     fields = ['text','cpu']
-    success_url = reverse_lazy('japp_index')
+    success_url = reverse_lazy('japp:index')
 
 
     def form_valid(self, form):
