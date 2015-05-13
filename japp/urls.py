@@ -1,6 +1,6 @@
 # coding: utf-8
 from django.conf.urls import patterns, include, url
-from .views import PdaChangesListView, PdaChangesDetailView, PdaChangesRegisterView, PdaChangesCreateView, listing, listing_by_date
+from .views import PdaChangesListView, PdaChangesDetailView, PdaChangesRegisterView, PdaChangesCreateView, listing
 from django.core.urlresolvers import reverse_lazy
 
 
