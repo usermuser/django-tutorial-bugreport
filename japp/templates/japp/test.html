@@ -1,0 +1,44 @@
+{% extends 'japp/base.html' %}
+{% block title_block %}Journal{% endblock %}
+{% block content_block %}
+
+<h1>Changes list</h1>
+    <table class="table">
+        <thead>
+        <tr>
+            <td>Cpu</td>
+            <td>Zone</td>
+            <td>Who changed</td>
+            <td>Date</td>
+            <td>Details</td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for pda in pda_changes %}
+        <tr>
+            <td>{{ pda.cpu.name|upper }}
+            <td>{{ pda.cpu.zone|upper }}
+            <td>{{pda.user}}</td>
+            <td>{{pda.date|date}}</td>
+            <td><a href="{% url 'japp:detail' pda.pk %}"> Details</a></td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+        <p></p>
+      <div class="pagination">
+        <span class="step-links">
+        {% if pda_changes.has_previous %}
+            <a href="?page={{ pda_changes.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ pda_changes.number }} of {{ pda_changes.paginator.num_pages }}.
+        </span>
+        {% if pda_changes.has_next %}
+            <a href="?page={{ pda_changes.next_page_number }}">next</a>
+        {% endif %}
+        </span>
+      </div>
+      
+{% endblock %}
