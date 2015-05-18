@@ -20,3 +20,6 @@ class Pda(models.Model):
     
     def __unicode__(self):
         return unicode(self.date)
+
+    class Lightsearch:
+        fields = ['text', 'user','date']

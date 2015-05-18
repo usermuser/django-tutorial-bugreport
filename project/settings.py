@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'bugtracker',
     'japp',
+    'lightsearch',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -87,7 +88,25 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 TEMPLATE_DIRS = (os.path.join(BASE_DIR, 'templates/'),)
+TEMPLATE_DIRS = (os.path.join(BASE_DIR,'lightsearch/', 'templates/'),)
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static/'),)
 
 from django.core.urlresolvers import reverse_lazy
 LOGIN_REDIRECT_URL = reverse_lazy('japp:index')
+
+#####LIGHTSEARCH CONFIG#######
+#http://www.bytebucket.org/pelletier/django-lightsearch/wiki/Install
+'''
+LIGHTSEARCH_MODELS = [
+#   ('Verbose name', '<appname>.<model>'),
+    ('Ticket', 'myapp.ticket'),
+    ('Author', 'myapp.author'),
+    ]
+'''
+LIGHTSEARCH_MODELS = [
+# ('Verbose name', '<appname>.<model>'),
+    ('Pda', 'japp.pda'),
+]
+LIGHTSEARCH_METHOD = 'post' # Must be 'post' or 'get' 
+
+
