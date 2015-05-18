@@ -5,8 +5,6 @@
         <title>japp - {% block title_block %}{% endblock %}</title>
     </head>
     <body>
-      {% load lightsearch_forms %}
-      {% lightsearch_searchform %}
         {% if user.is_authenticated %}
             <div>Welcome, {{ user.username }}
              | <a href="{% url 'japp:logout' %}">Logout</a></div>
