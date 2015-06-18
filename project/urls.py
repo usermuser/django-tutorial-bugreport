@@ -11,4 +11,5 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^bugs/', include('bugtracker.urls')),
     url(r'^journal/', include('japp.urls', namespace = 'japp')),
+    url(r'^search/', include('haystack.urls')),
 )

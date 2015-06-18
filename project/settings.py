@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'bugtracker',
     'japp',
+    'haystack',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -87,9 +88,15 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 TEMPLATE_DIRS = (os.path.join(BASE_DIR, 'templates/'),)
-TEMPLATE_DIRS = (os.path.join(BASE_DIR,'lightsearch/', 'templates/'),)
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static/'),)
 
 from django.core.urlresolvers import reverse_lazy
 LOGIN_REDIRECT_URL = reverse_lazy('japp:index')
+import os
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
+        'PATH': os.path.join(os.path.dirname(__file__), 'whoosh_index'),
+    },
+}
 
